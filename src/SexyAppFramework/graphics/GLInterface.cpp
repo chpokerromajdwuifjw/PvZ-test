@@ -1132,7 +1132,7 @@ void GLInterface::UpdateViewport()
 	vw = width; vh = height;
 
 	// Letterbox to 4:3
-	if (width * 3 > height * 4)
+	if (width * 9 > height * 19)
 	{
 		vw = height * 4 / 3;
 		vx = (width - vw) / 2;
