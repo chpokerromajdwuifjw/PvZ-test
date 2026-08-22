@@ -158,11 +158,11 @@ LawnApp::LawnApp()
 	mSfxVolume = 0.5525;
 	mAutoStartLoadingThread = false;
 	mDebugKeysEnabled = false;
-	mProdName = "io.github.wszqkzqk.pvz-portable";
+	mProdName = "io.github.csc.pvz-portable-qd";
 	mProductVersion = PVZP_VERSION;
 	mBuildNum = PVZP_BUILD_NUMBER;
 	mCommitDate = PVZP_COMMIT_DATE;
-	std::string aTitleName = "PvZ Portable";
+	std::string aTitleName = "PvZ Portable-qd";
 	mTitle = aTitleName;
 	mCustomCursorsEnabled = false;
 	mPlayerInfo = nullptr;
@@ -390,12 +390,7 @@ void LawnApp::GotFocus()
 
 void LawnApp::LostFocus()
 {
-#if (defined(__ANDROID__) && !defined(__TERMUX__)) || defined(__IPHONEOS__)
-	if (!mCheatKeys && CanPauseNow())
-	{
-		DoPauseDialog();
-	}
-#endif
+    DoPauseDialog();
 }
 
 void LawnApp::WriteToRegistry()
